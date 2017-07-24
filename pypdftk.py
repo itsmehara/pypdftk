@@ -39,7 +39,7 @@ def check_output(*popenargs, **kwargs):
 
 def run_command(command, shell=False):
     ''' run a system command and yield output '''
-    p = check_output(command, shell=shell)
+    p = str(check_output(command, shell=shell).decode("UTF-8"))
     return p.split('\n')
 
 try:
@@ -140,7 +140,7 @@ def gen_xfdf(datas={}):
     </xfdf>""" % "\n".join(fields)
     handle, out_file = tempfile.mkstemp()
     f = open(out_file, 'w')
-    f.write(tpl.encode('UTF-8'))
+    f.write(str(tpl.encode('UTF-8')))
     f.close()
     return out_file
 

@@ -8,7 +8,7 @@ def test_split():
 def test_num_pages():
     input_file = "./Out/some_file.pdf"
     num_pgs = pypdftk.get_num_pages(input_file)
-    print num_pgs
+    print( num_pgs )
 
 def test_concat():
     files = ["./Out/page_01.pdf", "./Out/page_02.pdf", "./Out/page_03.pdf"]
@@ -23,9 +23,9 @@ def test_uncompress():
     pypdftk.uncompress(input_file, "./Out/test1.unc.pdf")
 
 def main():
-    #test_split()
+    test_split()
     test_num_pages()
-    #test_concat()
+    test_concat()
     test_uncompress()
     test_compress()
 
